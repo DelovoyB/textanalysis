@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Analysis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="w-screen bg-blue-800 font-mono">
+    <section class="container flex justify-center items-center min-h-screen min-w-full flex-col">
+        <h1 class="text-white text-4xl mb-12">Text Analysis</h1>
+        <form action="/analyze/" method="post" class="flex flex-col justify-center items-center py-4 px-8">
+            <label class="text-white text-2xl mb-8" for="text">Enter your text:</label>
+            <textarea id="text" name="text" rows="5" cols="100" class="block w-full rounded-md border-0 py-1.5 text-gray-900
+             shadow-sm placeholder:text-gray-400  sm:text-sm sm:leading-6"></textarea>
+            <input type="hidden" name="form" value="true">
+            <input class="mt-8 text-2xl text-grey-600 cursor-pointer bg-white rounded-md transition duration-300 py-1 px-6 hover:bg-blue-500 hover:text-white" type="submit" value="Analyze">
+        </form>
+    </section>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Results</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="w-screen bg-blue-800 font-mono">
+    <section class="container flex justify-center items-center min-h-screen min-w-full flex-col">
+        <h1 class="text-white text-4xl mb-12">Analysis Results</h1>
+
+        <div class="bg-white rounded-md shadow-lg p-8 w-full max-w-2xl">
+            <p class="text-gray-900 text-xl mb-4"><strong>Word Count:</strong> {{ result.word_count }}</p>
+            <p class="text-gray-900 text-xl mb-4"><strong>Character Count:</strong> {{ result.char_count }}</p>
+
+            <div class="mb-4">
+                <p class="text-gray-900 text-xl"><strong>Top {{ result.frequency|length }} Words:</strong></p>
+                <ul class="list-disc list-inside text-gray-900 text-lg">
+                    {% for word, count in result.frequency.items() %}
+                    <li>{{ word }}: {{ count }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <p class="text-gray-900 text-xl mb-4"><strong>Sentiment Polarity:</strong> {{ result.polarity }}</p>
+            <p class="text-gray-900 text-xl mb-4"><strong>Sentiment Subjectivity:</strong> {{ result.subjectivity }}</p>
+        </div>
+
+        <a href="/" class="mt-8 text-2xl text-grey-600 cursor-pointer bg-white rounded-md transition duration-300 pt-1 px-6 hover:bg-blue-500 hover:text-white">Go back</a>
+    </section>
+</body>
+</html>
+
